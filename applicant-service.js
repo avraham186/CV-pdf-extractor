@@ -24,6 +24,7 @@ async function save(applicant) {
         await dbService.getCollection('cvs')
         const db = dbService.getDB()
         await db.collection('cvs').insertOne(applicantToSave)
+        console.log('saved to database');
         return applicantToSave
     } catch (err) {
         console.log('cannot add applicant', err)
